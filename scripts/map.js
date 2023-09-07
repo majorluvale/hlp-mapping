@@ -562,7 +562,7 @@ $(window).on('load', function() {
         : props[i][0].trim();
 
       var val = feature.properties[props[i][0].trim()];
-      info += ': <b>' + (val ? comma(val) : val) + '</b><br>';
+      info += ': <i>' + (val ? comma(val) : val) + '</i><br>';
     }
 
     if (getPolygonSetting(polygon, '_polygonDisplayImages') == 'on') {
@@ -573,7 +573,7 @@ $(window).on('load', function() {
 
     layer.bindPopup(info);
 
-    
+
     // Add polygon label if needed
     if (!allTextLabels[polygon]) { allTextLabels.push([]) }
 
@@ -640,7 +640,7 @@ $(window).on('load', function() {
       var geocoder = L.Control.geocoder({
         expand: 'click',
         position: getSetting('_mapSearch'),
-        
+
         geocoder: L.Control.Geocoder.nominatim({
           geocodingQueryParams: {
             viewbox: '',  // by default, viewbox is empty
@@ -749,7 +749,7 @@ $(window).on('load', function() {
       var gaScript = document.createElement('script');
       gaScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=' + ga);
       document.head.appendChild(gaScript);
-  
+
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -1025,7 +1025,7 @@ $(window).on('load', function() {
                       parse(polylines)
                     )
                   } else {
-                    
+
                     // Fetch another polygons sheet
                     $.getJSON(apiUrl + spreadsheetId + '/values/' + polygonSheets.shift() + '?key=' + googleApiKey, function(data) {
                       createPolygonSettings( parse([data]) )
@@ -1040,7 +1040,7 @@ $(window).on('load', function() {
                 fetchPolygonsSheet( polygonSheets )
 
               })
-              
+
             }
           )
 
@@ -1058,27 +1058,27 @@ $(window).on('load', function() {
         var parse = function(s) {
           return Papa.parse(s[0], {header: true}).data
         }
-      
+
         $.when(
           $.get('./csv/Options.csv'),
           $.get('./csv/Points.csv'),
           $.get('./csv/Polylines.csv')
         ).done(function(options, points, polylines) {
-      
+
           function loadPolygonCsv(n) {
-      
+
             $.get('./csv/Polygons' + (n === 0 ? '' : n) + '.csv', function(data) {
               createPolygonSettings( parse([data]) )
               loadPolygonCsv(n+1)
-            }).fail(function() { 
-              // No more sheets to load, initialize the map  
+            }).fail(function() {
+              // No more sheets to load, initialize the map
               onMapDataLoad( parse(options), parse(points), parse(polylines) )
             })
-      
+
           }
-      
+
           loadPolygonCsv(0)
-      
+
         })
 
        }
