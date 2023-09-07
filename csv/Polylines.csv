@@ -1,4 +1,0 @@
-GeoJSON URL,Display Name,Description,Color
-geodata/polylines-trail-ecg2021.geojson,trail,"trail (paved and unpaved), East Coast Greenway 2021",green
-geodata/polylines-onroad-ecg2021.geojson,on-road,"on-road route, East Coast Greenway 2021",blue
-geodata/polylines-transit-ecg2021.geojson,transit or ferry,"transit or ferry route, East Coast Greenway 2021",#efec00
