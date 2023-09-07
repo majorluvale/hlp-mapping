@@ -562,7 +562,8 @@ $(window).on('load', function() {
         : props[i][0].trim();
 
       var val = feature.properties[props[i][0].trim()];
-      info += ': <i>' + (val ? comma(val) : val) + '</i><br>';
+      //info += ': <b>' + (val ? comma(val) : val) + '</b><br>';
+      '<b>' + (val ? comma(val) : val) + '</b>'+= info +'<br>' ;
     }
 
     if (getPolygonSetting(polygon, '_polygonDisplayImages') == 'on') {
