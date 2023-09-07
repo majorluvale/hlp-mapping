@@ -558,12 +558,11 @@ $(window).on('load', function() {
       if (props[i] == '') { continue; }
 
       info += props[i][1]
-        ? props[i][1].trim()
-        : props[i][0].trim();
+        ? props[i][0].trim()
+        : props[i][1].trim();
 
       var val = feature.properties[props[i][0].trim()];
-      //info += ': <b>' + (val ? comma(val) : val) + '</b><br>';
-      '<b>' + (val ? comma(val) : val) + '</b>'+= info +'<br>' ;
+      info += ': <b>' + (val ? comma(val) : val) + '</b><br>';
     }
 
     if (getPolygonSetting(polygon, '_polygonDisplayImages') == 'on') {
