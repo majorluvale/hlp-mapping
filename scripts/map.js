@@ -566,11 +566,12 @@ $(window).on('load', function() {
 
     var countryName = '<h3>' + feature.properties.adm0_name + '</h3>';
     var coordMechanism = '<p class="coordMecha">' + feature.properties.coordMecha + '</p>';
-    var chair = '<p>Chair & co-Chair : ' + '<strong>' + [feature.properties.Chair, properties.coChair].join(', ') + '</strong></p>';
+    var chair = '<p>Chair: ' + feature.properties.Chair + '</p>';
+    var coChair = '<p>co-Chair: ' + feature.properties.coChair + '</p>';
     var peopleInNeed = '<p><strong>' + feature.properties.pinF + '</strong> People in need of HLP assistance in 2023</p>';
     var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted</p>';
     var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested</p>';
-    var info = countryName + coordMechanism + chair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
+    var info = countryName + coordMechanism + chair + coChair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
 
     //var info = '<p>';
     props = allPopupProperties[polygon];
