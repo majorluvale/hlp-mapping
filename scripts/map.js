@@ -548,6 +548,13 @@ $(window).on('load', function() {
   function onEachFeature(feature, layer) {
     // Do not bind popups if 1. no popup properties specified and 2. display
     // images is turned off.
+
+    layer.on('mouseover', function () {
+      this.setStyle({
+        'fillColor': 'lightblue'
+      });
+    });
+
     if (getPolygonSetting(polygon, '_popupProp') == ''
      && getPolygonSetting(polygon, '_polygonDisplayImages') == 'off') return;
 
