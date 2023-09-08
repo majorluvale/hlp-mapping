@@ -573,7 +573,7 @@ $(window).on('load', function() {
     var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested</p>';
     var info = countryName + coordMechanism + chair + coChair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
 
-    var info = '<p>';
+    //var info = '<p>';
     props = allPopupProperties[polygon];
 
     for (i in props) {
