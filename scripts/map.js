@@ -566,17 +566,16 @@ $(window).on('load', function() {
 
     var countryName = '<h3>' + feature.properties.adm0_name + '</h3>';
     var coordMechanism = '<p class="coordMecha">' + feature.properties.coordMecha + '</p>';
-    var chair = '<p>Chair & co-Chair : ' + '<strong>' + feature.properties.Chair + '</strong></p>';
-    var coChair = '<p>co-Chair : ' + '<strong>' + feature.properties.coChair + '</strong></p>';
+    var chair = '<p>Chair & co-Chair : ' + '<strong>' + [feature.properties.Chair, properties.coChair].join(', ') + '</strong></p>';
     var peopleInNeed = '<p><strong>' + feature.properties.pinF + '</strong> People in need of HLP assistance in 2023</p>';
     var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted</p>';
     var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested</p>';
-    var info = countryName + coordMechanism + chair + coChair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
+    var info = countryName + coordMechanism + chair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
 
     //var info = '<p>';
     props = allPopupProperties[polygon];
 
-    for (i in props) {
+    /* for (i in props) {
       if (props[i] == '') { continue; }
 
       info += props[i][1]
@@ -585,7 +584,7 @@ $(window).on('load', function() {
 
       var val = feature.properties[props[i][0].trim()];
       info += '<strong>' + (val ? comma(val) : val) + '</strong></p>';
-    }
+    } */
 
     if (getPolygonSetting(polygon, '_polygonDisplayImages') == 'on') {
       if (feature.properties['img']) {
