@@ -517,18 +517,6 @@ $(window).on('load', function() {
       }
     }
 
-    layer.on('mouseover', function () {
-      this.setStyle({
-        'fillColor': 'lightblue'
-      });
-    });
-
-    layer.on('mouseout', function () {
-      this.setStyle({
-        'fillColor': getColor(value)
-      });
-    });
-
   }
 
   /**
@@ -561,6 +549,18 @@ $(window).on('load', function() {
   function onEachFeature(feature, layer) {
     // Do not bind popups if 1. no popup properties specified and 2. display
     // images is turned off.
+    var value = feature.properties[allPolygonLayers[polygon][layer][0].trim()];
+    layer.on('mouseover', function () {
+      this.setStyle({
+        'fillColor': 'lightblue'
+      });
+    });
+
+    layer.on('mouseout', function () {
+      this.setStyle({
+        'fillColor': getColor(value)
+      });
+    });
 
     if (getPolygonSetting(polygon, '_popupProp') == ''
      && getPolygonSetting(polygon, '_polygonDisplayImages') == 'off') return;
