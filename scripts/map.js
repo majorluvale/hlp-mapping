@@ -570,7 +570,9 @@ $(window).on('load', function() {
     var peopleInNeed = '<p><strong>' + feature.properties.pinF + '</strong> People in need of HLP assistance in 2023</p>';
     var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted</p>';
     var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested</p>';
-    var info = countryName + coordMechanism + chairCochair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
+    var displayPopUp = countryName + coordMechanism + chairCochair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
+
+    var info = '<p>';
     props = allPopupProperties[polygon];
 
     for (i in props) {
@@ -590,7 +592,7 @@ $(window).on('load', function() {
       }
     }
 
-    layer.bindPopup(info);
+    layer.bindPopup(displayPopUp);
 
 
     // Add polygon label if needed
