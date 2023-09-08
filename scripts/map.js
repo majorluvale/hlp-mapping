@@ -508,7 +508,7 @@ $(window).on('load', function() {
       }
     } else {
       return {  // Polygon and Polyline style
-        weight: 2,
+        weight: 1,
         opacity: 1,
         color: tryPolygonSetting(polygon, '_outlineColor', 'white'),
         //dashArray: '3',
