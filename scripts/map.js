@@ -575,7 +575,7 @@ $(window).on('load', function() {
     //var info = '<p>';
     props = allPopupProperties[polygon];
 
-    /* for (i in props) {
+    for (i in props) {
       if (props[i] == '') { continue; }
 
       info += props[i][1]
@@ -583,8 +583,8 @@ $(window).on('load', function() {
         : props[i][0].trim();
 
       var val = feature.properties[props[i][0].trim()];
-      info += '<strong>' + (val ? comma(val) : val) + '</strong></p>';
-    } */
+      info += '<span>' + (val ? comma(val) : val) + '</span></p>';
+    }
 
     if (getPolygonSetting(polygon, '_polygonDisplayImages') == 'on') {
       if (feature.properties['img']) {
