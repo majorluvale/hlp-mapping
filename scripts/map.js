@@ -565,7 +565,12 @@ $(window).on('load', function() {
      && getPolygonSetting(polygon, '_polygonDisplayImages') == 'off') return;
 
     var countryName = '<h3>' + feature.properties.adm0_name + '</h3>';
-    var info = countryName + '<p>';
+    var coordMechanism = '<p class="coordMecha">' + feature.properties.coordMecha + '</p>';
+    var chairCochair = '<p>Chair & co-Chair : ' + '<strong>' + feature.properties.Chair + ', '+ feature.properties.coChair + '</strong></p>';
+    var peopleInNeed = '<p><strong>' + feature.properties.pinF + '</strong> People in need of HLP assistance in 2023</p>';
+    var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted</p>';
+    var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested</p>';
+    var info = countryName + coordMechanism + chairCochair + peopleInNeed + peopleTargeted + fundingRequirement + '<p>';
     props = allPopupProperties[polygon];
 
     for (i in props) {
