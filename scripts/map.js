@@ -566,7 +566,7 @@ $(window).on('load', function() {
 
     var countryName = '<h3>' + feature.properties.adm0_name + '</h3>';
     var coordMechanism = '<p class="coordMecha">' + feature.properties.coordMecha + '</p>';
-    var chair = '<p style="color: #3366cc;"><b>Chair & co-Chairs: </b>' + feature.properties.chairs + '</p>';
+    var chair = '<p>Chair & co-Chairs: <b style="color: #1C75BC;line-height:10px;">' + feature.properties.chairs + '</b></p>';
     var peopleInNeed = '<p><strong>' + feature.properties.pinF + '</strong> People in Need</p>';
     var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted</p>';
     var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested</p>';
