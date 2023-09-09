@@ -565,8 +565,8 @@ $(window).on('load', function() {
      && getPolygonSetting(polygon, '_polygonDisplayImages') == 'off') return;
 
     var countryName = '<h3 style="color:##666666;">' + feature.properties.adm0_name + '</h3>';
-    var coordMechanism = '<p class="coordMecha">' + feature.properties.coordMecha + '</p>';
-    var chair = '<p>Chair & co-Chairs: <b style="color: #1C75BC;line-height:10px;">' + feature.properties.chairs + '</b></p>';
+    var coordMechanism = '<p class="coordMecha";>' + feature.properties.coordMecha + '</p>';
+    var chair = '<p style="line-height:1.6;">Chair & co-Chairs: <b style="color:#1C75BC;">' + feature.properties.chairs + '</b></p>';
     var peopleInNeed = '<p><strong>' + feature.properties.pinF + '</strong> People in Need</p>';
     var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted</p>';
     var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested</p>';
