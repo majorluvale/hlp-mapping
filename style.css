@@ -292,7 +292,6 @@ span.legend-icon {
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
-  border-radius: 5px;
   color: white;
   padding: 6px 12px
   text-align: center;
@@ -307,10 +306,12 @@ span.legend-icon {
 
 
 a.btn-blue {
-	background-color: #1C75BC;
-  color: white;
-  font-size: 12px;
-  border: 2px solid #1C75BC;
+  background-color: #1C75BC;
+	color: white;
+	font-size: 12px;
+	border: 2px solid #1C75BC;
+	line-height: 25px;
+	padding: 5px 12px;
 }
 
 a.btn-blue:hover {
