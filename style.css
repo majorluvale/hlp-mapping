@@ -292,12 +292,13 @@ span.legend-icon {
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
+  border-radius: 5px;
   color: white;
-  padding: 12px 25px;
+  padding: 6px 12px
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -305,13 +306,14 @@ span.legend-icon {
 }
 
 
-.btn-blue {
-	background-color: #008CBA;
+a.btn-blue {
+	background-color: #1C75BC;
   color: white;
-  border: 2px solid #008CBA;
+  font-size: 12px;
+  border: 2px solid #1C75BC;
 }
 
-.btn-blue:hover {
+a.btn-blue:hover {
  	background-color: white;
-  color: black;
+  color: #1C75BC;
 }
