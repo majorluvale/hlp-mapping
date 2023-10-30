@@ -293,7 +293,7 @@ span.legend-icon {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 12px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -301,6 +301,7 @@ span.legend-icon {
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  font-weight: bold;
 }
 
 
