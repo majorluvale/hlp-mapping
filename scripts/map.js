@@ -925,7 +925,7 @@ $(window).on('load', function() {
    * Changes map attribution (author, GitHub repo, email etc.) in bottom-right
    */
   function changeAttribution() {
-    var disclaimer = '<p><small>The designations employed and the presentation of the material on this map do not imply the expression of any opinion whatsoever on the part of the "Housing, Land and Property Area Of Responsability" concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.</small></p>';
+    var disclaimer = '<p><small>The designations employed and the presentation of the material on this map do not imply the expression of any opinion whatsoever on the part of the "Housing, Land and Property Area Of Responsability" concerning the legal status of any country or concerning the delimitation of its frontiers or boundaries.</small></p>';
     var attributionHTML = $('.leaflet-control-attribution')[0].innerHTML;
     var credit = 'View <a href="' + googleDocURL + '" target="_blank">data</a>';
     var name = getSetting('_authorName');
