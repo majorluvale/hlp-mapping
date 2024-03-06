@@ -571,7 +571,7 @@ $(window).on('load', function() {
     var peopleTargeted = (feature.properties.targetF==='') ? '':'<p><strong>' + feature.properties.targetF + '</strong> People Targeted (2023)</p>';
     var fundingRequirement = (feature.properties.freqF==='') ? '':'<p><strong>' + feature.properties.freqF + '</strong> Funds requested (2023)</p>';
     var fundingPercentage = new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits:1}).format(feature.properties.fPercent);
-    var fundingReceived = (properties.fPercent==='0') ? '':'<p><strong>' + fundingPercentage + '</strong> Funded (as of Sept 2023 - Source: GPC Data)</p>';
+    var fundingReceived = (feature.properties.fPercent===0) ? '':'<p><strong>' + fundingPercentage + '</strong> Funded (as of Sept 2023 - Source: GPC Data)</p>';
     var linkBtn = (feature.properties.link==='') ? '':'<a class="button btn-blue" href="'+ feature.properties.link + '" target="_blank">Go to the Country page</a>';
     var info = countryName + coordMechanism + chair + peopleInNeed + peopleTargeted + fundingRequirement + fundingReceived + '<p>' + linkBtn;
 
