@@ -568,11 +568,11 @@ $(window).on('load', function() {
     var coordMechanism = '<p class="coordMecha";>' + feature.properties.coordMecha + '</p>';
     var chair = '<p style="line-height:1.6;">Chair & co-Chairs: <b style="color:#1C75BC;">' + feature.properties.chairs + '</b></p>';
     var peopleInNeed = (feature.properties.pinF==='NoData') ? '':'<p><strong>' + feature.properties.pinF + '</strong> People in Need (2023)</p>';
-    var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted (2023)</p>';
-    var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested (2023)</p>';
+    var peopleTargeted = (feature.properties.targetF==='NoData') ? '':'<p><strong>' + feature.properties.targetF + '</strong> People Targeted (2023)</p>';
+    var fundingRequirement = (feature.properties.freqF==='NoData') ? '':'<p><strong>' + feature.properties.freqF + '</strong> Funds requested (2023)</p>';
     var fundingPercentage = new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits:1}).format(feature.properties.fPercent);
-    var fundingReceived = '<p><strong>' + fundingPercentage + '</strong> Funded (as of Sept 2023 - Source: GPC Data)</p>';
-    var linkBtn = '<a class="button btn-blue" href="'+ feature.properties.link + '" target="_blank">Go to the Country page</a>';
+    var fundingReceived = (fundingPercentage===0) ? '':'<p><strong>' + fundingPercentage + '</strong> Funded (as of Sept 2023 - Source: GPC Data)</p>';
+    var linkBtn = (feature.properties.link==='#') ? '':'<a class="button btn-blue" href="'+ feature.properties.link + '" target="_blank">Go to the Country page</a>';
     var info = countryName + coordMechanism + chair + peopleInNeed + peopleTargeted + fundingRequirement + fundingReceived + '<p>' + linkBtn;
 
     //var info = '<p>';
