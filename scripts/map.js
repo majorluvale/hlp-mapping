@@ -567,7 +567,7 @@ $(window).on('load', function() {
     var countryName = '<h3 style="color:##666666;">' + feature.properties.adm0_name + '</h3>';
     var coordMechanism = '<p class="coordMecha";>' + feature.properties.coordMecha + '</p>';
     var chair = '<p style="line-height:1.6;">Chair & co-Chairs: <b style="color:#1C75BC;">' + feature.properties.chairs + '</b></p>';
-    var peopleInNeed = if(feature.properties.pinF=='NoData','','<p><strong>' + feature.properties.pinF + '</strong> People in Need (2023)</p>');
+    var peopleInNeed = (feature.properties.pinF==='NoData') ? '':'<p><strong>' + feature.properties.pinF + '</strong> People in Need (2023)</p>';
     var peopleTargeted = '<p><strong>' + feature.properties.targetF + '</strong> People Targeted (2023)</p>';
     var fundingRequirement = '<p><strong>' + feature.properties.freqF + '</strong> Funds requested (2023)</p>';
     var fundingPercentage = new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits:1}).format(feature.properties.fPercent);
