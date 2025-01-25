@@ -310,8 +310,9 @@ a.btn-blue {
 	color: white;
 	font-size: 12px;
 	border: 2px solid #1C75BC;
+  margin: auto;
 	line-height: 25px;
-	padding: 2px 12px;
+	padding: 3px;
 }
 
 a.btn-blue:hover {
