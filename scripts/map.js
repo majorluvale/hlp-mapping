@@ -949,8 +949,8 @@ $(window).on('load', function() {
 
   /**
    * Loads the basemap and adds it to the map
-   */
-  function addBaseMap() {
+   * 
+   *   function addBaseMap() {
     var basemap = trySetting('_tileProvider', 'CartoDB.Positron');
     L.tileLayer.provider(basemap, {
       maxZoom: 18
@@ -959,6 +959,47 @@ $(window).on('load', function() {
       position: trySetting('_mapAttribution', 'bottomright')
     }).addTo(map);
   }
+   */
+
+function addBaseMap() {
+  var basemap = trySetting('_tileProvider', 'CartoDB.Positron');
+  var cartoApiKey = trySetting('_cartoApiKey', '');
+
+  if (
+    basemap === 'CartoDB.Positron' ||
+    basemap === 'CartoDB.PositronNoLabels'
+  ) {
+    var cartoUrl;
+
+    if (basemap === 'CartoDB.PositronNoLabels') {
+      cartoUrl =
+        'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
+    } else {
+      cartoUrl =
+        'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+    }
+
+    if (cartoApiKey) {
+      cartoUrl += '?key=' + encodeURIComponent(cartoApiKey);
+    }
+
+    L.tileLayer(cartoUrl, {
+      maxZoom: 20,
+      subdomains: 'abcd'
+    }).addTo(map);
+
+  } else {
+    L.tileLayer.provider(basemap, {
+      maxZoom: 18
+    }).addTo(map);
+  }
+
+  L.control.attribution({
+    position: trySetting('_mapAttribution', 'bottomright')
+  }).addTo(map);
+}
+
+
 
   /**
    * Returns the value of a setting s

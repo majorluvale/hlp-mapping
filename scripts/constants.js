@@ -22,6 +22,8 @@ var constants = {
   _initZoom: 'Initial Zoom',
   _initLat: 'Initial Center Latitude',
   _initLon: 'Initial Center Longitude',
+  _cartoApiKey: 'API Key',
+
 	// Map Controls
 	_mapSearch: 'Search Button',
 	_mapSearchCircleRadius: 'Search Radius',
